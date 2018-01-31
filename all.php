@@ -19,7 +19,11 @@
   <div class="bericht" id="all">
   <?php
 
-  echo $_GET["bericht"]
+  // use data from the database
+  $sql=mysqli_query("SELECT user, message FROM list");
+
+  // show it on the page
+  
 
   ?>
   </div>

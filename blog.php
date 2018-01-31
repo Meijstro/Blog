@@ -19,13 +19,19 @@
 
  <div class="bericht" id="all">
    <?php
-
+   // show written article to blogger
    echo "<b>".$_POST["blogger"]."</b>". " ";
    echo date("(j F Y h:i)");
    echo "<br>"."<br>";
    echo $_POST["bericht"];
    echo "<hr>";
 
+
+   // send the data to database
+   $bericht=$_POST["bericht"];
+   $blogger=$_POST["blogger"];
+   $sql="INSERT INTO list(user, message) VALUES ('$blogger','$bericht')";
+   $result= mysqli_query($connection,$sql);
 
     ?>
  </div>
