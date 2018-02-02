@@ -10,7 +10,7 @@ Ik weet nu ook hoe ik data naar de database kan sturen en het later kan terugvra
 Live demo:
 www.sjoerd.niks.tv
 
-*---Je moet twee keer zoeken op naam voordat je kan filteren op auteur---*
 
+*---Het filteren op categorieën ontbreekt nog---*
 
 
