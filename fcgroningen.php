@@ -15,9 +15,11 @@
     <li><a href="cryptovaluta.php">Cryptovaluta</a></li>
     <li><a href="trump.php">Trump</a></li>
   </ul>
-  <h2 class="header2"> Zoek op blogger </h2>
-  <input id="blogger" type="text" name="blogger" required><br><br>
-  <input id="button" type="button" value="Search">
+  <form class="form" action="search.php" method="POST">
+    <h2 class="header2"> Zoek op blogger </h2>
+    <input id="blogger" type="text" name="blogger" required><br><br>
+    <input id="button" type="submit" value="Search">
+  </form>
 
   <div class="bericht" id="sport">
   FC Groningen is een voetbalclub uit de stad Groningen.

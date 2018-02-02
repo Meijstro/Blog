@@ -23,7 +23,7 @@
 
   <div class="bericht" id="all">
   <?php
-  
+
 // Zoeken werkt maar je moet twee keer zoeken.
   if (isset($_POST['button2'])) {
             $name = $_POST['blogger'];
