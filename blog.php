@@ -20,10 +20,9 @@
  <div class="bericht" id="all">
    <?php
    // show written article to blogger
-   echo "<b>".$_POST["blogger"]."</b>". " ";
-   echo date("(j F Y h:i)");
+   echo "<br>"."<b>".$_POST["blogger"]."</b>". " ";
    echo "<br>"."<br>";
-   echo $_POST["bericht"];
+   echo "&nbsp;&nbsp;".$_POST["bericht"];
    echo "<hr>";
 
 
