@@ -18,7 +18,7 @@
   <form class="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
     <h2 class="header2"> Zoek op blogger </h2>
     <input id="blogger" type="text" name="blogger" required><br><br>
-    <input id="button" type="submit" name= "button2"value="Search">
+    <input id="button" type="submit" name= "button2" value="Search">
   </form>
 
   <div class="bericht" id="all">
@@ -46,9 +46,15 @@ else{
   {
   echo "<br>"."<b>".$row["user"]."</b>"." "."<span>".$row["timestamp"].
   "</span>"."<br>"."<br>"."&nbsp;&nbsp;".$row["message"]."<br>"."<br>".
-  '<textarea id="comment1" name="comment" rows="4" cols="80"></textarea>'.'<input id="button" type="submit" value="Reageer">'."<hr>";
+  '<form class="form" action="".php method="POST">'.
+  '<textarea id="comment1" name="comment" rows="4" cols="80"></textarea>'.
+  '<input id="button" type="submit" value="Reageer">'."</form>"."<hr>";
   }
 }
+
+$comment=$_POST["comment"];
+$sql="INSERT INTO list2(comments) VALUES ('$comment')";
+$result= mysqli_query($connection,$sql);
 
   ?>
   </div>
