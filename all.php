@@ -15,7 +15,7 @@
     <li><a href="cryptovaluta.php">Cryptovaluta</a></li>
     <li><a href="trump.php">Trump</a></li>
   </ul>
-  <form class="form" action="search.php" method="POST">
+  <form class="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
     <h2 class="header2"> Zoek op blogger </h2>
     <input id="blogger" type="text" name="blogger" required><br><br>
     <input id="button" type="submit" name= "button2"value="Search">
@@ -37,6 +37,7 @@
   "</span>"."<br>"."<br>"."&nbsp;&nbsp;".$row["message"]."<hr>";
   }
 }
+else{
 
   // use data from the database and show it
   $sql= "SELECT * FROM list ORDER BY timestamp DESC;";
@@ -44,8 +45,10 @@
   while($row= mysqli_fetch_assoc($result))
   {
   echo "<br>"."<b>".$row["user"]."</b>"." "."<span>".$row["timestamp"].
-  "</span>"."<br>"."<br>"."&nbsp;&nbsp;".$row["message"]."<hr>";
+  "</span>"."<br>"."<br>"."&nbsp;&nbsp;".$row["message"]."<br>"."<br>".
+  '<textarea id="comment1" name="comment" rows="4" cols="80"></textarea>'.'<input id="button" type="submit" value="Reageer">'."<hr>";
   }
+}
 
   ?>
   </div>

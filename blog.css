@@ -94,6 +94,9 @@ li a:hover {
   text-decoration: none;
   font-size: 16px;
   border-radius: 8px;
+  box-shadow: 6px 6px 5px;
+  -webkit-box-shadow: 6px 6px 5px #999;
+  -moz-box-shadow: 6px 6px 5px #999;
   }
 #blogger {
   background-color: #008e5a;
@@ -109,8 +112,13 @@ li a:hover {
   width: 40%;
   height: 300px;
   text-align: left;
+  resize: none;
   }
   span{
   float: right;
   font-weight: bold;
+  }
+  #comment1{
+    resize: none;
+    border-radius: 5px;
   }

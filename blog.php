@@ -29,7 +29,9 @@
    // send the data to database
    $bericht=$_POST["bericht"];
    $blogger=$_POST["blogger"];
-   $sql="INSERT INTO list(user, message) VALUES ('$blogger','$bericht')";
+   $categorie=$_POST["categorie"];
+   $sql="INSERT INTO list(user, message, categorie)
+   VALUES ('$blogger','$bericht','$categorie')";
    $result= mysqli_query($connection,$sql);
 
     ?>

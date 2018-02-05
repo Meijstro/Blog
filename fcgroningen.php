@@ -15,18 +15,41 @@
     <li><a href="cryptovaluta.php">Cryptovaluta</a></li>
     <li><a href="trump.php">Trump</a></li>
   </ul>
-  <form class="form" action="search.php" method="POST">
+  <form class="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
     <h2 class="header2"> Zoek op blogger </h2>
     <input id="blogger" type="text" name="blogger" required><br><br>
-    <input id="button" type="submit" value="Search">
+    <input id="button" type="submit" name= "button2" value="Search">
   </form>
 
   <div class="bericht" id="sport">
-  FC Groningen is een voetbalclub uit de stad Groningen.
-  De FC werd opgericht op 16 juni 1971 en kwam voort uit
-  de Groninger Voetbal en Atletiek Vereniging.
+    <?php
+    if (isset($_POST['button2'])) {
+              $name = $_POST['blogger'];
+
+    // use data from the database and show it
+    $sql= "SELECT * FROM list WHERE user = '$name' AND categorie = 'fcgroningen' ORDER BY timestamp DESC;";
+    $result= mysqli_query($connection,$sql);
+    while($row= mysqli_fetch_assoc($result))
+    {
+    echo "<br>"."<b>".$row["user"]."</b>"." "."<span>".$row["timestamp"].
+    "</span>"."<br>"."<br>"."&nbsp;&nbsp;".$row["message"]."<hr>";
+    }
+  }
+  else{
+
+    $sql= "SELECT * FROM list WHERE categorie= 'fcgroningen'
+    ORDER BY timestamp DESC;";
+    $result= mysqli_query($connection,$sql);
+    while($row= mysqli_fetch_assoc($result))
+    {
+    echo "<br>"."<b>".$row["user"]."</b>"." "."<span>".$row["timestamp"].
+    "</span>"."<br>"."<br>"."&nbsp;&nbsp;".$row["message"]."<hr>";
+    }
+  }
+    ?>
   </div>
-</div>
+
+  </div>
 
 </body>
 </html>
