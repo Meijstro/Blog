@@ -11,6 +11,3 @@ Live demo:
 www.sjoerd.niks.tv
 
 
-*---Het filteren op categorieën ontbreekt nog---*
-
-
